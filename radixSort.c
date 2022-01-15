@@ -36,12 +36,6 @@ void countSort(int arr[], int n, int e) {
         arr[i] = output[i];
 }
 
-void print(int arr[], int n) {
-    for (int i = 0; i < n; i++)
-        printf("%d ",arr[i]);
-    printf("\n");
-}
-
 void radixSort(int * arr, int n) {
     // Get max number
     int max = getMax(arr, n); 

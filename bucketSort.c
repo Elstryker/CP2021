@@ -1,5 +1,11 @@
 #include "bucketSort.h"
-#include "radixSort.h"
+#include "bubbleSort.h"
+
+void print(int arr[], int n) {
+    for (int i = 0; i < n; i++)
+        printf("%d ",arr[i]);
+    printf("\n");
+}
 
 int * getMinAndMax(int arr[], int len) {
     int * minAndMax = malloc(2 * sizeof(int));
@@ -67,7 +73,7 @@ void bucketSort(int arr[], int len, int numBuckets) {
 
     // Sort buckets
     for(int i = 0; i < numBuckets; i++) {
-        radixSort(buckets[i],sizeBucket[i]);
+        bubbleSort(buckets[i],sizeBucket[i]);
     }
 
     // Merge all bucket elements

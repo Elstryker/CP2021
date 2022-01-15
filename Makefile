@@ -1,6 +1,6 @@
-OBJS	= main.o radixSort.o bucketSort.o
-SOURCE	= main.c radixSort.c bucketSort.c
-HEADER	= radixSort.h bucketSort.h
+OBJS	= main.o bubbleSort.o bucketSort.o
+SOURCE	= main.c bubbleSort.c bucketSort.c
+HEADER	= bubbleSort.h bucketSort.h
 OUT	= a.out
 CC	 = gcc
 FLAGS	 = -g -c -Wall
@@ -12,15 +12,15 @@ all: $(OBJS)
 main.o: main.c
 	$(CC) $(FLAGS) main.c -std=c99
 
-radixSort.o: radixSort.c
-	$(CC) $(FLAGS) radixSort.c -std=c99
+bubbleSort.o: bubbleSort.c
+	$(CC) $(FLAGS) bubbleSort.c -std=c99
 
 bucketSort.o: bucketSort.c
 	$(CC) $(FLAGS) bucketSort.c -std=c99
 
 
 clean:
-	rm -f $(OBJS) $(OUT)
+	rm -f $(OBJS) $(OUT) *.o
 
 run: $(OUT)
 	./$(OUT)

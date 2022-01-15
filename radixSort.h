@@ -3,5 +3,4 @@
 
 int getMax(int arr[],int n);
 void countSort(int arr[],int n, int e);
-void print(int arr[], int n);
 void radixSort(int arr[],int n);
