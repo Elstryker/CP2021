@@ -22,7 +22,7 @@ int Events[NUM_EVENTS] = { PAPI_TOT_CYC, PAPI_TOT_INS, PAPI_L1_DCM, PAPI_L2_DCM}
 long long values[NUM_EVENTS], min_values[NUM_EVENTS];
 
 // number of times the function is executed and measured
-#define NUM_RUNS 5
+#define NUM_RUNS 1
 
 int main_buckets(int argc, char *argv[])
 {
@@ -102,7 +102,7 @@ int main (int argc, char *argv[]) {
   fprintf (stdout, "done!\n");
 
   for (run=0 ; run < NUM_RUNS ; run++) { 
-   fprintf (stderr, "\nrun=%d - Computing C = A * B...", run);
+   //fprintf (stderr, "\nrun=%d - Computing C = A * B...", run);
 
    // use PAPI timer (usecs) - note that this is wall clock time
    // for process time running in user mode -> PAPI_get_virt_usec()
