@@ -67,10 +67,10 @@ void bucketSort(int arr[], int len, int numBuckets) {
     }
 
     // See bucket composition
-    for(int i = 0; i < numBuckets; i++) {
-        printf("Bucket %d, Count %d : ", i, sizeBucket[i]);
-        print(buckets[i],sizeBucket[i]);
-    }
+    // for(int i = 0; i < numBuckets; i++) {
+    //     printf("Bucket %d, Count %d : ", i, sizeBucket[i]);
+    //     print(buckets[i],sizeBucket[i]);
+    // }
 
     // Sort buckets
     for(int i = 0; i < numBuckets; i++) {

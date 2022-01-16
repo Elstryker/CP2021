@@ -50,14 +50,13 @@ int main_buckets(int argc, char *argv[])
         numbers[i] = r;
     }
 
-    printf("Original array: ");
-    print(numbers,size);
-    // int numbers[] = {123, 8, 40, 67, 298, 76, 8, 93, 30, 77, 43, 345, 157, 187, 265, 3, 36, 300, 40, 50, 86};
+    // printf("Original array: ");
+    // print(numbers,size);
 
     bucketSort(numbers,size,buckNum);
 
-    printf("Sorted Array: ");
-    print(numbers,size);
+    // printf("Sorted Array: ");
+    // print(numbers,size);
 
     return 0;
 }
