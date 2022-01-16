@@ -1,5 +1,5 @@
 # source files.
-SRC = main.c radixSort.c bucketSort.c
+SRC = main.c radixSort.c bucketSort_parallel.c 
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -15,7 +15,7 @@ CCFLAGS = -O2 -Wall -I/share/apps/papi/5.4.1/include -ftree-vectorize -msse4 -st
 CCC = gcc 
 
 # libraries
-LIBS = -L/share/apps/papi/5.4.1/lib -lm -lpapi
+LIBS = -L/share/apps/papi/5.4.1/lib -lm -lpapi -fopenmp
 
 .SUFFIXES: .cpp .c 
 
