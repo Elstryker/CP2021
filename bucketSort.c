@@ -1,5 +1,6 @@
 #include "bucketSort.h"
-#include "bubbleSort.h"
+#include "radixSort.h"
+
 
 void print(int arr[], int n) {
     for (int i = 0; i < n; i++)
@@ -73,7 +74,7 @@ void bucketSort(int arr[], int len, int numBuckets) {
 
     // Sort buckets
     for(int i = 0; i < numBuckets; i++) {
-        bubbleSort(buckets[i],sizeBucket[i]);
+        radixSort(buckets[i],sizeBucket[i]);
     }
 
     // Merge all bucket elements

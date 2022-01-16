@@ -1,26 +1,40 @@
-OBJS	= main.o bubbleSort.o bucketSort.o
-SOURCE	= main.c bubbleSort.c bucketSort.c
-HEADER	= bubbleSort.h bucketSort.h
-OUT	= a.out
-CC	 = gcc
-FLAGS	 = -g -c -Wall
-LFLAGS	 = 
+# source files.
+SRC = main.c radixSort.c bucketSort.c
 
-all: $(OBJS)
-	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
+OBJ = $(SRC:.cpp=.o)
 
-main.o: main.c
-	$(CC) $(FLAGS) main.c -std=c99
+OUT = test
 
-bubbleSort.o: bubbleSort.c
-	$(CC) $(FLAGS) bubbleSort.c -std=c99
+# include directories
+INCLUDES = -I.
+ 
+# C compiler flags 
+CCFLAGS = -O2 -Wall -I/share/apps/papi/5.4.1/include -ftree-vectorize -msse4 -std=c99
 
-bucketSort.o: bucketSort.c
-	$(CC) $(FLAGS) bucketSort.c -std=c99
+# compiler
+CCC = gcc 
 
+# libraries
+LIBS = -L/share/apps/papi/5.4.1/lib -lm -lpapi
+
+.SUFFIXES: .cpp .c 
+
+
+default: $(OUT)
+
+.cpp.o:
+	$(CCC) $(CCFLAGS) $(INCLUDES)  -c $< -o $@
+
+.c.o:
+	$(CCC) $(CCFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OUT): $(OBJ)
+	$(CCC) -o $(OUT) $(CCFLAGS) $(OBJ) $(LIBS) 
+
+depend:  dep
+#
+#dep:
+#	makedepend -- $(CFLAGS) -- $(INCLUDES) $(SRC)
 
 clean:
-	rm -f $(OBJS) $(OUT) *.o
-
-run: $(OUT)
-	./$(OUT)
+	rm -f *.o .a *~ Makefile.bak $(OUT)
