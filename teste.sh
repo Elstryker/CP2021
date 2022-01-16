@@ -10,5 +10,5 @@ $MY/test 1000000 100
 time  $MY/test 1000000 100
 
 
-perf record  ./test
-perf report -n > perfreport 
+# perf record  ./test
+# perf report -n > perfreport 
