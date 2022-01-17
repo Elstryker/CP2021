@@ -26,17 +26,17 @@ int partition(int array[], int low, int high) {
   return (i + 1);
 }
 
-void quickSort(int array[], int low, int high) {
+void qSort(int array[], int low, int high) {
   if (low < high) {
 
     int pi = partition(array, low, high);
 
-    quickSort(array, low, pi - 1);
+    qSort(array, low, pi - 1);
 
-    quickSort(array, pi + 1, high);
+    qSort(array, pi + 1, high);
   }
 }
 
-void qSort(int array[], int n) {
-    quickSort(array,0,n-1);
+void quickSort(int array[], int n) {
+    qSort(array,0,n-1);
 }

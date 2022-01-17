@@ -1,5 +1,5 @@
 # source files.
-SRC = main.c radixSort.c bucketSort_parallel.c 
+SRC = main.c quickSort.c bucketSort_parallel.c 
 
 OBJ = $(SRC:.cpp=.o)
 

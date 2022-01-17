@@ -5,8 +5,8 @@
 
 #include "papi.h"
  
-#include "radixSort.h"
-#include "bucketSort.h"
+
+#include "bucketSort_parallel.h"
 #include <time.h>
 
 
@@ -16,7 +16,7 @@
 void (*func)(int args, char *argv[] );
 
 #define NUM_EVENTS 4
-int Events[NUM_EVENTS] = { PAPI_TOT_CYC, PAPI_TOT_INS, PAPI_L1_DCM, PAPI_L2_DCM};
+int Events[NUM_EVENTS] = { PAPI_TOT_INS, PAPI_L1_DCM, PAPI_L2_DCM, PAPI_L3_TCM};
 
 // PAPI counters' values
 long long values[NUM_EVENTS], min_values[NUM_EVENTS];
@@ -45,12 +45,12 @@ int main_buckets(int argc, char *argv[])
 
     srand(time(NULL));
 
+    
     for(int i = 0; i < size; i++) {
         int r = rand() % 10000;
         numbers[i] = r;
     }
 
-    // printf("Original array: ");
     // print(numbers,size);
 
     bucketSort(numbers,size,buckNum);
@@ -158,7 +158,7 @@ int main (int argc, char *argv[]) {
   
 
   printf ("\nThat's all, folks\n");
-  return 1;
+  return 0;
 }
 
 
